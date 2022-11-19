@@ -180,3 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
+  _paddingLeft: 0.5
+  _paddingRight: 0.5
+  _paddingTop: 3
+  _paddingBottom: 0.75
