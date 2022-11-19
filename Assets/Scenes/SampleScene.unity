@@ -608,6 +608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8857728345941962003, guid: 170045a28790dba40ad015e7b47fb44d, type: 3}
+      propertyPath: _waveConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 15d7b9c6d9aaa7f4db09f35ff76d96ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170045a28790dba40ad015e7b47fb44d, type: 3}
 --- !u!4 &1365290894 stripped
