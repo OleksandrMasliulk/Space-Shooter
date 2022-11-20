@@ -3,11 +3,18 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
-    [SerializeField] private GameObject _projectilePrefab;
+    [Header("General")]
     [SerializeField] private Transform _projectileSpawnPoint;
+
+    [Header("Projectile")]
+    [SerializeField] private GameObject _projectilePrefab;
     [SerializeField] private float _projectileMoveSpeed;
     [SerializeField] private float _projectileLifetime;
-    [SerializeField] private float _timeBetweenShots;
+
+    [Header("Shooting behaviour")]
+    [SerializeField] private float _baseFireRate;
+    [SerializeField] private float _fireRateVariance;
+    [SerializeField] private float _minFireRate;
 
     private bool _isFiring = false;
     private Coroutine _fireCoroutine;
@@ -34,7 +41,7 @@ public class Shooter : MonoBehaviour
         while(true)
         {
             SpawnProjectile();
-            yield return new WaitForSeconds(_timeBetweenShots);
+            yield return new WaitForSeconds(GetRandomFireRate());
         }
     }
 
@@ -42,7 +49,7 @@ public class Shooter : MonoBehaviour
     {
         GameObject projectile = Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
         if (projectile.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody2D))
-            rigidbody2D.velocity = transform.up * _projectileMoveSpeed;
+            rigidbody2D.velocity = _projectileSpawnPoint.transform.up * _projectileMoveSpeed;
 
         Destroy(projectile, _projectileLifetime);
     }
@@ -50,5 +57,11 @@ public class Shooter : MonoBehaviour
     public void SetIsIfring(bool newValue)
     {
         _isFiring = newValue;
+    }
+
+    private float GetRandomFireRate()
+    {
+        float fireRate = Random.Range(_baseFireRate - _fireRateVariance, _baseFireRate + _fireRateVariance);
+        return Mathf.Clamp(fireRate, _minFireRate, float.MaxValue);
     }
 }
