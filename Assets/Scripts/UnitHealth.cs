@@ -9,6 +9,7 @@ public class UnitHealth : MonoBehaviour
         if (other.TryGetComponent<DamageDealer>(out DamageDealer damageDealer))
         {
             TakeDamage(damageDealer.Damage);
+            damageDealer.Hit();
         }
     }
 
