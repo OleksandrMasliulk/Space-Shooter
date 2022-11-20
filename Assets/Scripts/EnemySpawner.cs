@@ -7,10 +7,25 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform _spawnParent;
     [SerializeField] private List<WaveConfigSO> _waveConfigs;
     [SerializeField] private float _timeBetweenWaves;
+    [SerializeField] private bool _isLooping;
 
     void Start()
     {
-        StartCoroutine(SpawnEnemyWaves());
+        StartCoroutine(HandleInfiniteSpawnLoop());
+    }
+
+    IEnumerator HandleInfiniteSpawnLoop()
+    {
+        do
+        {
+            yield return StartCoroutine(SpawnEnemyWaves());
+
+            if (!_isLooping)
+                yield return null;
+            else
+                yield return new WaitForSeconds(_timeBetweenWaves);
+        }
+        while (_isLooping);
     }
 
     IEnumerator SpawnEnemyWaves()
