@@ -1,17 +1,16 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Pathfinder : MonoBehaviour
 {
-    [SerializeField] private WaveConfigSO _waveConfig;
+    private WaveConfigSO _waveConfig;
     private List<Transform> _waypoints;
     private int _waypointIndex = 0;
 
-    private void Start() 
+    public void Construct(WaveConfigSO waveConfig)
     {
+        _waveConfig = waveConfig;
         _waypoints = _waveConfig.GetWaypoints();
-        transform.position = _waveConfig.GetFirstWaypoint().position;
     }
 
     private void Update() 
