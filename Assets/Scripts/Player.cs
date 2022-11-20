@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(Shooter))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed;
@@ -13,6 +14,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float _paddingRight;
     [SerializeField] private float _paddingTop;
     [SerializeField] private float _paddingBottom;
+
+    private Shooter _shooter;
+
+    private void Awake() 
+    {
+        _shooter = GetComponent<Shooter>();
+    }
 
     private void Start() 
     {
@@ -44,5 +52,10 @@ public class Player : MonoBehaviour
     private void OnMove(InputValue value)
     {
         _moveInput = value.Get<Vector2>();
+    }
+
+    private void OnFire(InputValue value)
+    {
+        _shooter.SetIsIfring(value.isPressed);
     }
 }
