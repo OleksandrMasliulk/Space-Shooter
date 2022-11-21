@@ -350,6 +350,56 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &526703513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 526703514}
+  - component: {fileID: 526703515}
+  m_Layer: 0
+  m_Name: Audio Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &526703514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526703513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1413783496}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &526703515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526703513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb87c1413f1db9849b9c25a9d464c44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shotSFX: {fileID: 8300000, guid: 033b1daf4512444018111f90f909d172, type: 3}
+  _shotSFXVolume: 0.03
+  _hitSFX: {fileID: 8300000, guid: 5a734bcdccebe4d0aa169e4bc43d5210, type: 3}
+  _hitSFXVolume: 0.08
+  _explosionSFX: {fileID: 8300000, guid: eeac7ff7e4ad44587b11429a7e7b8fc1, type: 3}
+  _explosionSFXVolume: 0.2
 --- !u!1 &573499002
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b71c6b5266a0a2469c111de3a09e6a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollSpeed: {x: 0, y: 0.01}
+  _scrollSpeed: {x: 0, y: 0.018}
 --- !u!1 &713210814
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +911,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 898515030}
+  - {fileID: 526703514}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

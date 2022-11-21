@@ -20,6 +20,13 @@ public class Shooter : MonoBehaviour
     private bool _isFiring = false;
     private Coroutine _fireCoroutine;
 
+    private AudioPlayer _audioPlayer;
+
+    private void Awake() 
+    {
+        _audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
+
     private void Update() 
     {
         Shoot();
@@ -51,6 +58,9 @@ public class Shooter : MonoBehaviour
         GameObject projectile = Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
         if (projectile.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody2D))
             rigidbody2D.velocity = _projectileSpawnPoint.transform.up * _projectileMoveSpeed;
+
+        if (_audioPlayer != null)
+            _audioPlayer.PlayShotSFX();
 
         if (_muzzleVFX != null)
             Instantiate(_muzzleVFX, _projectileSpawnPoint.position, _projectileSpawnPoint.rotation, _projectileSpawnPoint);

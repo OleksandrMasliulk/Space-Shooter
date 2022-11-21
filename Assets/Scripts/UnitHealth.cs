@@ -8,9 +8,12 @@ public class UnitHealth : MonoBehaviour
 
     private PlayerCameraShake _playerCameraShake;
 
+    private AudioPlayer _audioPlayer;
+
     private void Awake() 
     {
         _playerCameraShake = GetComponent<PlayerCameraShake>();
+        _audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -27,6 +30,9 @@ public class UnitHealth : MonoBehaviour
         if (_applyCameraShake && _playerCameraShake != null)
             _playerCameraShake.InvokeImpactShake();
 
+        if (_audioPlayer != null)
+            _audioPlayer.PlayHitSFX();
+
         _health -= damage;
         if (_health <= 0)
             Die();
@@ -36,6 +42,9 @@ public class UnitHealth : MonoBehaviour
     {
         if (_applyCameraShake && _playerCameraShake != null)
             _playerCameraShake.InvokeDeathShake();
+
+        if (_audioPlayer != null)
+            _audioPlayer.PlayExplosionSFX();
 
         if (_destroyVFX != null)
             Instantiate(_destroyVFX, transform.position, Quaternion.identity);
