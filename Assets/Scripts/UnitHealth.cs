@@ -17,13 +17,14 @@ public class UnitHealth : MonoBehaviour
     private PlayerCameraShake _playerCameraShake;
     private AudioPlayer _audioPlayer;
     private ScoreKeeper _scoreKeeper;
-
+    private LevelManager _levelManager;
 
     private void Awake() 
     {
         _playerCameraShake = GetComponent<PlayerCameraShake>();
         _audioPlayer = FindObjectOfType<AudioPlayer>();
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _levelManager = FindObjectOfType<LevelManager>();
         _maxHealth = _health;
     }
 
@@ -62,6 +63,8 @@ public class UnitHealth : MonoBehaviour
 
         if (!_isPlayer && _scoreKeeper != null)
             _scoreKeeper.ModifyScore(_scoreValue);
+        else if (_levelManager != null)
+            _levelManager.LoadGameOver();
 
         Destroy(this.gameObject);
     }
