@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
+
     [Header("Shot")]
     [SerializeField] private AudioClip _shotSFX;
     [SerializeField, Range(0f, 1f)] private float _shotSFXVolume;
@@ -13,6 +14,24 @@ public class AudioPlayer : MonoBehaviour
     [Header("Explosion")]
     [SerializeField] private AudioClip _explosionSFX;
     [SerializeField, Range(0f, 1f)] private float _explosionSFXVolume;
+
+    private static AudioPlayer Instance;
+    
+    private void Awake()
+    {
+        HandleSingleton();
+    }
+
+    private void HandleSingleton()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+            Destroy(this.gameObject);
+    }
 
     public void PlayShotSFX()
     {
