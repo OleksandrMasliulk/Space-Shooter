@@ -502,7 +502,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56076ef28cd9333419cefff10a1a9c95, type: 2}
   - {fileID: 11400000, guid: 8eb080dd13c264b458d48f77d2d7a873, type: 2}
   _timeBetweenWaves: 4
-  _isLooping: 0
+  _isLooping: 1
 --- !u!1 &1199701413
 GameObject:
   m_ObjectHideFlags: 0
