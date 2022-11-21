@@ -12,13 +12,15 @@ GameObject:
   - component: {fileID: 5546900581068219852}
   - component: {fileID: 2065182845718909887}
   - component: {fileID: 8260558399073711544}
+  - component: {fileID: 2521128286084629781}
   - component: {fileID: 8984428939107785146}
   - component: {fileID: -7173598006602585487}
   - component: {fileID: 3858216739288542914}
   - component: {fileID: 6589408806541506453}
+  - component: {fileID: 7480336539557356349}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +121,59 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2521128286084629781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057098408071906760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: -1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 3
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 11400000, guid: c4d4ce2debfe3294ab18a44578605656, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0
+      m_DecayTime: 0.15
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: 1, z: 0}
 --- !u!114 &8984428939107785146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _destroyVFX: {fileID: 8762982868916169913, guid: 21429aa90ab104746a0d704185acbfa1, type: 3}
+  _applyCameraShake: 1
 --- !u!114 &3858216739288542914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +240,20 @@ MonoBehaviour:
   _baseFireRate: 0.2
   _fireRateVariance: 0
   _minFireRate: 0
+--- !u!114 &7480336539557356349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3057098408071906760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834497423f2542b4788ef945f6ae8ae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _impactShakeForce: 3
+  _deathShakeForce: 10
 --- !u!1 &5155807893118407206
 GameObject:
   m_ObjectHideFlags: 0
