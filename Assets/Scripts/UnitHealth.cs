@@ -6,22 +6,25 @@ public class UnitHealth : MonoBehaviour
     [SerializeField] private bool _isPlayer;
     [SerializeField] private int _scoreValue;
     [SerializeField] private int _health;
+    private int _maxHealth;
 
     [Header("FX")]
     [SerializeField] private Transform _destroyVFX;
     [SerializeField] private bool _applyCameraShake;
 
-    public int CurrentHealth => _health;
+    public float CurrentHealthNormalized => _health * 1f / _maxHealth;
 
     private PlayerCameraShake _playerCameraShake;
     private AudioPlayer _audioPlayer;
     private ScoreKeeper _scoreKeeper;
+
 
     private void Awake() 
     {
         _playerCameraShake = GetComponent<PlayerCameraShake>();
         _audioPlayer = FindObjectOfType<AudioPlayer>();
         _scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        _maxHealth = _health;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
