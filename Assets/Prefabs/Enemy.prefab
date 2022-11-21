@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 234393749255629413}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,8 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba78a2aff98570542a51f6eb9529a581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPlayer: 0
+  _scoreValue: 30
   _health: 20
   _destroyVFX: {fileID: 8762982868916169913, guid: 21429aa90ab104746a0d704185acbfa1, type: 3}
+  _applyCameraShake: 0
 --- !u!114 &1066940396554918620
 MonoBehaviour:
   m_ObjectHideFlags: 0
