@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388428770032930758}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -0.32, z: 0}
+  m_LocalPosition: {x: 0, y: -0.406, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 20
+  _destroyVFX: {fileID: 8762982868916169913, guid: 21429aa90ab104746a0d704185acbfa1, type: 3}
 --- !u!114 &1066940396554918620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 30
+  _impactVFX: {fileID: 0}
 --- !u!114 &5825161950489459953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 5026584494881752297}
+  _muzzleVFX: {fileID: 2515329675421903028, guid: eeb114f975317fa4dbc4a4bf18f6a4d5, type: 3}
   _projectilePrefab: {fileID: 5828516728099365617, guid: 41c27521adfd06b4b997890dd9db3a0f, type: 3}
   _projectileMoveSpeed: 7
   _projectileLifetime: 7

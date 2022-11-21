@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
+  _destroyVFX: {fileID: 8762982868916169913, guid: 21429aa90ab104746a0d704185acbfa1, type: 3}
 --- !u!114 &3858216739288542914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 100
+  _impactVFX: {fileID: 0}
 --- !u!114 &6589408806541506453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 9150198422609570214}
+  _muzzleVFX: {fileID: 2515329675421903028, guid: 0fbff4c8a46eb8346863882e66623f80, type: 3}
   _projectilePrefab: {fileID: 5828516728099365617, guid: a4c1c66416189b54cb909eef8ca532b1, type: 3}
   _projectileMoveSpeed: 13
   _projectileLifetime: 5
@@ -289,7 +292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6700566999252264910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.157, z: 0}
+  m_LocalPosition: {x: 0, y: 0.311, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

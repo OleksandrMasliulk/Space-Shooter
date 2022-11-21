@@ -3,6 +3,7 @@ using UnityEngine;
 public class UnitHealth : MonoBehaviour
 {
     [SerializeField] private int _health;
+    [SerializeField] private Transform _destroyVFX;
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -22,6 +23,9 @@ public class UnitHealth : MonoBehaviour
 
     private void Die()
     {
+        if (_destroyVFX != null)
+            Instantiate(_destroyVFX, transform.position, Quaternion.identity);
+
         Destroy(this.gameObject);
     }
 }

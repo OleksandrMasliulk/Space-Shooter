@@ -5,6 +5,7 @@ public class Shooter : MonoBehaviour
 {
     [Header("General")]
     [SerializeField] private Transform _projectileSpawnPoint;
+    [SerializeField] private Transform _muzzleVFX;
 
     [Header("Projectile")]
     [SerializeField] private GameObject _projectilePrefab;
@@ -50,6 +51,9 @@ public class Shooter : MonoBehaviour
         GameObject projectile = Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
         if (projectile.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody2D))
             rigidbody2D.velocity = _projectileSpawnPoint.transform.up * _projectileMoveSpeed;
+
+        if (_muzzleVFX != null)
+            Instantiate(_muzzleVFX, _projectileSpawnPoint.position, _projectileSpawnPoint.rotation, _projectileSpawnPoint);
 
         Destroy(projectile, _projectileLifetime);
     }

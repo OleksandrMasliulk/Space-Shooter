@@ -169,3 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
+  _impactVFX: {fileID: 6497902309284585339, guid: 094896cfb4ade374dab9efefe1ab8f02, type: 3}
