@@ -17,10 +17,10 @@ public class Shooter : MonoBehaviour
     [SerializeField] private float _fireRateVariance;
     [SerializeField] private float _minFireRate;
 
+    private AudioPlayer _audioPlayer;
+
     private bool _isFiring = false;
     private Coroutine _fireCoroutine;
-
-    private AudioPlayer _audioPlayer;
 
     private void Awake() 
     {
@@ -59,8 +59,7 @@ public class Shooter : MonoBehaviour
         if (projectile.TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody2D))
             rigidbody2D.velocity = _projectileSpawnPoint.transform.up * _projectileMoveSpeed;
 
-        if (_audioPlayer != null)
-            _audioPlayer.PlayShotSFX();
+        _audioPlayer?.PlayShotSFX();
 
         if (_muzzleVFX != null)
             Instantiate(_muzzleVFX, _projectileSpawnPoint.position, _projectileSpawnPoint.rotation, _projectileSpawnPoint);
