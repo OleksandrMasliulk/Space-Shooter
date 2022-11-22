@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveConfigSO : ScriptableObject
 {
     [SerializeField] private List<GameObject> _enemyPrefabs;
-    [SerializeField] private Transform _pathPrefab;
+    [SerializeField] private List<Transform> _pathPrefabs;
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _timeBetweenEnemySpawns;
     [SerializeField] private float _spawnTimeVariance;
@@ -14,21 +14,23 @@ public class WaveConfigSO : ScriptableObject
     public float MovementSpeed => _movementSpeed;
     public int EnemyCount => _enemyPrefabs.Count;
 
+    private Transform _selectedPath;
+
     public Transform GetFirstWaypoint()
     {
-        if (_pathPrefab.childCount == 0)
+        if (_selectedPath.childCount == 0)
             throw new System.Exception("Path has no waypoints!");
 
-        return _pathPrefab.GetChild(0);
+        return _selectedPath.GetChild(0);
     }
 
     public List<Transform> GetWaypoints()
     {
-        if (_pathPrefab.childCount == 0)
+        if (_selectedPath.childCount == 0)
             throw new System.Exception("Path has no waypoints!");
 
         List<Transform> waypoints = new List<Transform>();
-        foreach(Transform waypoint in _pathPrefab)
+        foreach(Transform waypoint in _selectedPath)
             waypoints.Add(waypoint);
 
         return waypoints;
@@ -46,5 +48,14 @@ public class WaveConfigSO : ScriptableObject
     {
         float spawnTime = Random.Range(_timeBetweenEnemySpawns - _spawnTimeVariance, _timeBetweenEnemySpawns + _spawnTimeVariance);
         return Mathf.Clamp(spawnTime, _minSpawnTime, float.MaxValue);
+    }
+
+    public void SelectRandomPath()
+    {
+        if (_pathPrefabs.Count == 0)
+            throw new System.Exception("There are no paths assigned to this wave!");
+
+        int rand = Random.Range(0, _pathPrefabs.Count);
+        _selectedPath = _pathPrefabs[rand];
     }
 }
