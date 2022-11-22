@@ -32,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
     {
         foreach(WaveConfigSO waveConfig in _waveConfigs)
         {
+            waveConfig.SelectRandomPath();
             yield return StartCoroutine(SpawnEnemies(waveConfig));
 
             if (waveConfig == _waveConfigs[_waveConfigs.Count - 1])
@@ -46,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < waveConfig.EnemyCount; i++)
         {
-            GameObject enemyGO = Instantiate(waveConfig.GetEnemyPrefab(0),
+            GameObject enemyGO = Instantiate(waveConfig.GetEnemyPrefab(i),
                                             waveConfig.GetFirstWaypoint().position,
                                             Quaternion.identity,
                                             _spawnParent);

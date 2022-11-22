@@ -13,10 +13,27 @@ MonoBehaviour:
   m_Name: Wave 2
   m_EditorClassIdentifier: 
   _enemyPrefabs:
-  - {fileID: 5376020600570947662, guid: 170045a28790dba40ad015e7b47fb44d, type: 3}
-  - {fileID: 5376020600570947662, guid: 170045a28790dba40ad015e7b47fb44d, type: 3}
-  _pathPrefab: {fileID: 3444750605438539949, guid: 524b7e3ff4ba57e4182d2f1ab925b346, type: 3}
-  _movementSpeed: 3
+  - {fileID: 5376020600570947662, guid: 54a814b508b40974cac1bbeee489ec8f, type: 3}
+  - {fileID: 5376020600570947662, guid: 54a814b508b40974cac1bbeee489ec8f, type: 3}
+  - {fileID: 5376020600570947662, guid: 54a814b508b40974cac1bbeee489ec8f, type: 3}
+  _pathPrefabs:
+  - {fileID: 3444750605438539949, guid: 524b7e3ff4ba57e4182d2f1ab925b346, type: 3}
+  - {fileID: 3444750605438539949, guid: 17b4d93ba2ff1a64bbb971fd6e39a130, type: 3}
+  - {fileID: 3444750605438539949, guid: bd30e8f51cae1cb4188f343a8f9d7e19, type: 3}
+  - {fileID: 3444750605438539949, guid: 3a78cc82fb0345640bd99f3b1351d62d, type: 3}
+  - {fileID: 832487956295092223, guid: 1682c3383bb8cd24ba7a6e0a80bdfa8b, type: 3}
+  - {fileID: 832487956295092223, guid: b11ae13c428cac04882b096f197b3343, type: 3}
+  - {fileID: 832487956295092223, guid: 6f54a21cdbfee4f45a4ae3935c3f5d12, type: 3}
+  - {fileID: 832487956295092223, guid: 042a3709af00f9047aff6aa216f3ea6d, type: 3}
+  - {fileID: 8562334695343775203, guid: ff3284776cb0f234fbedec41c0c0643c, type: 3}
+  - {fileID: 8562334695343775203, guid: 100ce8f12615cf84b951909209a31cfe, type: 3}
+  - {fileID: 8562334695343775203, guid: ba2b3de15a1f9f94cba29c9cd20cb035, type: 3}
+  - {fileID: 8562334695343775203, guid: 420abfc14167785488a7b30118f1bb3d, type: 3}
+  - {fileID: 5153087349805854690, guid: 7f69ab85100ed5e4488085605489fbf7, type: 3}
+  - {fileID: 5153087349805854690, guid: 370bfd88607444748965be391e164174, type: 3}
+  - {fileID: 5153087349805854690, guid: 82ce817f1b7ad0d45abe3e87b25daaf7, type: 3}
+  - {fileID: 5153087349805854690, guid: 8d98ce84afaf7b34fa89feb10002b1bc, type: 3}
+  _movementSpeed: 1.5
   _timeBetweenEnemySpawns: 3
   _spawnTimeVariance: 4
   _minSpawnTime: 0.5

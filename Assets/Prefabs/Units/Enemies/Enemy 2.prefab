@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932166454719370525}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.027, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -2129630241
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e0eb2fcf83877bc4397b3002bf39153c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f680e5047c3880e4285d455c7e341a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388428770032930758}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -0.406, z: 0}
+  m_LocalPosition: {x: 0, y: -0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 5825161950489459953}
   - component: {fileID: 234393749255629413}
   m_Layer: 7
-  m_Name: Enemy
+  m_Name: Enemy 2
   m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -201,11 +201,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.43702036, y: 0.094169304}
-      - {x: 0.43742082, y: 0.30971098}
-      - {x: -0.4371738, y: 0.3124147}
-      - {x: -0.43626794, y: 0.095224895}
-      - {x: -0.0006505493, y: -0.40726843}
+    - - {x: 0.5645213, y: 0.06565109}
+      - {x: 0.5658996, y: 0.21827316}
+      - {x: -0.5582376, y: 0.21804367}
+      - {x: -0.55830956, y: 0.061948057}
+      - {x: 0.0019826898, y: -0.380936}
 --- !u!114 &8857728345941962003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,8 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isPlayer: 0
-  _scoreValue: 30
-  _health: 20
+  _scoreValue: 100
+  _health: 30
   _destroyVFX: {fileID: 8762982868916169913, guid: 21429aa90ab104746a0d704185acbfa1, type: 3}
   _applyCameraShake: 0
 --- !u!114 &1066940396554918620
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e528b9f7a05f71844bd0c9e3276efafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 30
+  _damage: 100
   _impactVFX: {fileID: 0}
 --- !u!114 &5825161950489459953
 MonoBehaviour:
@@ -263,8 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 5026584494881752297}
   _muzzleVFX: {fileID: 2515329675421903028, guid: eeb114f975317fa4dbc4a4bf18f6a4d5, type: 3}
-  _projectilePrefab: {fileID: 5828516728099365617, guid: 41c27521adfd06b4b997890dd9db3a0f, type: 3}
-  _projectileMoveSpeed: 7
+  _projectilePrefab: {fileID: 5828516728099365617, guid: c3e9f1299c585104f91d7e196d794986, type: 3}
+  _projectileMoveSpeed: 6
   _projectileLifetime: 7
   _baseFireRate: 1
   _fireRateVariance: 0.7
