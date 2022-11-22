@@ -30,7 +30,10 @@ public class AudioPlayer : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
         else
+        {
+            gameObject.SetActive(false);
             Destroy(this.gameObject);
+        }
     }
 
     public void PlayShotSFX()
